@@ -26,6 +26,9 @@
                 </div>   
         </div>
         <button type="submit" [disabled]="LoginForm.invalid">Submit</button>
+        <div *ngIf="invalid" class="alert alert-danger">
+            Invalid Credentials!! Try Again!!
+        </div>
     </form>
 
 </div>

@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  invalid:boolean = false;
   LoginForm = this.formBuilder.group({
     username: ['', Validators.required],
     password: ['', Validators.required]
@@ -36,15 +37,23 @@ export class LoginComponent implements OnInit {
 
     this.loginService.userValidation(loginCredentials).subscribe(
       (data) => {
-
+        console.log(data);
+        
         let role: Role = data.role;
 
         if (role.role_name == "admin") {
           this.router.navigate(['admin'])
         }
+        else if(role.role_name == "employee"){
+          this.router.navigate(['employee'])
+        }
+        else if(role.role_name == "manager"){
+          this.router.navigate(['manager'])
+        }
       },
       (error) => {
         console.log(error)
+        this.invalid = true;
       }
     )
   }
