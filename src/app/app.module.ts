@@ -16,6 +16,12 @@ import { AdminDepartmentsListComponent } from './admin/admin-departments-list/ad
 import { AdminSalariesComponent } from './admin/admin-salaries/admin-salaries.component';
 import { AdminEmployeeDetailsComponent } from './admin/admin-employee-details/admin-employee-details.component';
 import { AdminManagerEmployeesComponent } from './admin/admin-manager-employees/admin-manager-employees.component';
+import { EmployeeApplyLeaveComponent } from './employee/employee-apply-leave/employee-apply-leave.component';
+import { EmployeeComponent } from './employee/employee/employee.component';
+import { EmployeeLeavesComponent } from './employee/employee-leaves/employee-leaves.component';
+import { EmployeeCancelLeaveComponent } from './employee/employee-cancel-leave/employee-cancel-leave.component';
+import { AdminModule } from './admin/admin.module';
+import { EmployeeModule } from './employee/employee.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,11 @@ import { AdminManagerEmployeesComponent } from './admin/admin-manager-employees/
     AdminDepartmentsListComponent,
     AdminSalariesComponent,
     AdminEmployeeDetailsComponent,
-    AdminManagerEmployeesComponent
+    AdminManagerEmployeesComponent,
+    EmployeeApplyLeaveComponent,
+    EmployeeComponent,
+    EmployeeLeavesComponent,
+    EmployeeCancelLeaveComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +47,9 @@ import { AdminManagerEmployeesComponent } from './admin/admin-manager-employees/
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    AdminModule,
+    EmployeeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
