@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Login } from '../models/login';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Employee } from '../models/employee';
 
 
 @Injectable({
@@ -20,5 +21,9 @@ export class LoginService {
   handler(error: HttpErrorResponse) {
     // error.error.message = undefined
     return throwError(error.error.message || "No User Found")
+  }
+
+  getUser(loginCredentials: Login): Observable<Employee>{
+    return this.httpClient.get<Employee>(this.baseURL+ "/user/" + loginCredentials.username)
   }
 }

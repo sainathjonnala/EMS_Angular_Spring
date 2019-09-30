@@ -3,7 +3,6 @@ import { Login } from '../models/login';
 import { FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
-import { Role } from '../models/role';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   invalid:boolean = false;
+  
   LoginForm = this.formBuilder.group({
     username: ['', Validators.required],
     password: ['', Validators.required]
@@ -37,18 +37,20 @@ export class LoginComponent implements OnInit {
 
     this.loginService.userValidation(loginCredentials).subscribe(
       (data) => {
-        console.log(data);
-        
-        let role: Role = data.role;
-
-        if (role.role_name == "admin") {
+  
+        if (data.role.role_name == "admin") {
+          sessionStorage.setItem('userDetails','loginCredentials')
           this.router.navigate(['admin'])
+
         }
-        else if(role.role_name == "employee"){
-          this.router.navigate(['employee'])
-        }
-        else if(role.role_name == "manager"){
-          this.router.navigate(['manager'])
+        else if (data.role.role_name == "employee" || data.role.role_name == "manager") {
+          this.loginService.getUser(loginCredentials).subscribe(
+            (data) => {
+              sessionStorage.setItem('employeeDetails',JSON.stringify(data))
+              this.router.navigate(['employee'])
+              
+            }
+          )
         }
       },
       (error) => {
