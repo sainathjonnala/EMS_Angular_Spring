@@ -1,4 +1,13 @@
-<p>admin works!</p>
-<a routerLink="add" routerLinkActive="active">Add Employee</a><br/>
-<a routerLink="remove" routerLinkActive="active">Remove Employee</a>
+<div class="sidenav">
+    <a routerLink="add" routerLinkActive="active">Add Employee</a>
+    <a routerLink="remove" routerLinkActive="active">Remove Employee</a>
+    <a routerLink="employees" routerLinkActive="active">View Employee</a>
+    <a routerLink="departments" routerLinkActive="active">View Departments</a>
+    <a routerLink="employee" routerLinkActive="active">Employee Details</a>
+    <a routerLink="salaries" routerLinkActive="active">Salaries</a>
+    <a routerLink="managerEmployees" routerLinkActive="active">Employees of a Manager</a>
+</div>
+<div class="header">
+    <h2>welcome {{adminDetails.username | uppercase}}</h2>
+</div>
 <router-outlet></router-outlet>

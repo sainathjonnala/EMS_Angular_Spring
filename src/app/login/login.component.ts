@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       (data) => {
   
         if (data.role.role_name == "admin") {
-          sessionStorage.setItem('userDetails','loginCredentials')
+          sessionStorage.setItem('adminDetails',JSON.stringify(data))
           this.router.navigate(['admin'])
 
         }

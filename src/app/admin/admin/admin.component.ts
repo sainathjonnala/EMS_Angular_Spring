@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Login } from 'src/app/models/login';
+
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  adminDetails: Login
 
+  constructor() { }
+  
   ngOnInit() {
+    this.adminDetails = JSON.parse(sessionStorage.getItem('adminDetails'))
   }
 
 }

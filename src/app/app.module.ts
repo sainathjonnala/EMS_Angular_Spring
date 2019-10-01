@@ -22,6 +22,7 @@ import { EmployeeLeavesComponent } from './employee/employee-leaves/employee-lea
 import { EmployeeCancelLeaveComponent } from './employee/employee-cancel-leave/employee-cancel-leave.component';
 import { AdminModule } from './admin/admin.module';
 import { EmployeeModule } from './employee/employee.module';
+import { EmployeeLeaveBalanceComponent } from './employee/employee-leave-balance/employee-leave-balance.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { EmployeeModule } from './employee/employee.module';
     EmployeeComponent,
     EmployeeLeavesComponent,
     EmployeeCancelLeaveComponent,
+    EmployeeLeaveBalanceComponent
   ],
   imports: [
     BrowserModule,

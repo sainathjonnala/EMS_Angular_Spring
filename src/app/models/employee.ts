@@ -8,6 +8,7 @@ export class Employee {
     email : string;
     address : string;
     employee_id : string;
+    manager_id : string;
     salary : number;
     pf : number;
     leave_balance? : LeaveBalance;
