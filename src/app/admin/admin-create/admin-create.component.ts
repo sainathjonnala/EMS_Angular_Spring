@@ -49,7 +49,6 @@ export class AdminCreateComponent implements OnInit {
   
   get department_id() {
     return this.AddEmployeeForm.get('department_id');
-  
   }
   
   get role_id() {

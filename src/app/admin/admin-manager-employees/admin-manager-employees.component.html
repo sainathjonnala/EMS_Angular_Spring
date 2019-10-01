@@ -1,3 +1,20 @@
-<div class="main">
-    <p>admin-manager-employees works!</p>
-</div>
+<div class="main" style="font-size: medium">
+    <div class="container-fluid">
+        <h4>View Employees of Manager</h4>
+        <form [formGroup] = "ManagerForm" (ngSubmit)="onSubmit(ManagerForm.value)">
+        <div class="form-group">
+                <label>
+                    Manager-ID :  
+                </label>
+                &nbsp;
+                <input [class.is-valid] = "manager_id.is-valid && manager_id.touched" type="text" formControlName='manager_id' id="manager_id">
+                <div *ngIf="manager_id.invalid && (manager_id.dirty || manager_id.touched)" class="alert alert-danger">
+                    <div *ngIf="manager_id.errors.required">
+                        Manager-ID is required.
+                    </div>
+                </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="ManagerForm.invalid">View</button>
+    </form>    
+    </div>
+</div>    

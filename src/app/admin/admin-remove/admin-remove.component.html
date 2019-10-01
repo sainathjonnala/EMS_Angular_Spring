@@ -1,3 +1,20 @@
-<div class="main">
-    <p>admin-remove works!</p>
+<div class="main" style="font-size: medium">
+    <div class="container-fluid">
+        <h4>Remove Employee</h4>
+        <form [formGroup] = "RemoveEmployeeForm" (ngSubmit)="onSubmit(RemoveEmployeeForm.value)">
+        <div class="form-group">
+                <label>
+                    Employee-ID :  
+                </label>
+                &nbsp;
+                <input [class.is-valid] = "employee_id.is-valid && employee_id.touched" type="text" formControlName='employee_id' id="employee_id">
+                <div *ngIf="employee_id.invalid && (employee_id.dirty || employee_id.touched)" class="alert alert-danger">
+                    <div *ngIf="employee_id.errors.required">
+                        Employee-ID is required.
+                    </div>
+                </div>
+        </div>
+        <button class="btn btn-primary"  type="submit" [disabled]="RemoveEmployeeForm.invalid">Remove</button>
+    </form>    
 </div>
+</div>    

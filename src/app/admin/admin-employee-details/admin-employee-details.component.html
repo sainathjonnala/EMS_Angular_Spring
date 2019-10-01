@@ -1,3 +1,20 @@
-<div class="main">
-    <p>admin-employee-details works!</p>
+<div class="main" style="font-size: medium">
+    <div class="container-fluid">
+        <h4>Employee Details</h4>
+        <form [formGroup] = "EmployeeForm" (ngSubmit)="onSubmit(EmployeeForm.value)">
+        <div class="form-group">
+                <label>
+                    Employee-ID :  
+                </label>
+                &nbsp;
+                <input [class.is-valid] = "employee_id.is-valid && employee_id.touched" type="text" formControlName='employee_id' id="employee_id">
+                <div *ngIf="employee_id.invalid && (employee_id.dirty || employee_id.touched)" class="alert alert-danger">
+                    <div *ngIf="employee_id.errors.required">
+                        Employee-ID is required.
+                    </div>
+                </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="EmployeeForm.invalid">View</button>
+    </form>    
 </div>
+</div>    
