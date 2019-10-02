@@ -10,7 +10,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   left: 0;
   background-color: #111;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 50px;
 }
 
 .sidenav a {
@@ -32,6 +32,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-top: 20px;
 }
 
+.header{
+  text-align: center;
+  padding-left: 180px;
+  margin-top: 20px;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -39,13 +45,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 table {
   width:100%;
+  margin-top: 15px;
 }
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid #111;
   border-collapse: collapse;
+  font-size: medium;
 }
 th, td {
-  padding: 15px;
+  padding: 12px;
   text-align: left;
 }
 tr:nth-child(even) {
@@ -55,6 +63,7 @@ tr:nth-child(odd) {
  background-color: #fff;
 }
 th {
-  background-color: black;
-  color: white;
+  background-color: #111;
+  color: rgba(255, 255, 255, 0.945);
 }
+

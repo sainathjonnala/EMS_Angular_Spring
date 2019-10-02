@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Employee } from 'src/app/models/employee';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-admin-employee-details',
@@ -9,10 +10,15 @@ import { Employee } from 'src/app/models/employee';
 })
 export class AdminEmployeeDetailsComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private adminService: AdminService) { }
 
   ngOnInit() {
   }
+
+  displayForm: boolean = false; 
+  employee: Employee;
+  notExist: boolean = false;
+
 
   EmployeeForm = this.formBuilder.group({
     employee_id : ['', Validators.required]
@@ -21,7 +27,19 @@ export class AdminEmployeeDetailsComponent implements OnInit {
   get employee_id(){
     return this.EmployeeForm.get('employee_id');
   }
-  onSubmit(employee: Employee){
-
+  onSubmit(){
+  
+    this.adminService.getEmployee(this.EmployeeForm.value.employee_id).subscribe(
+      (data) => {
+        if( data != null ){
+        this.displayForm = true;
+        this.employee = data;
+        }
+      },
+      (error) => {
+        this.displayForm = false;
+        this.notExist = true;
+      }
+    )
   }
 }

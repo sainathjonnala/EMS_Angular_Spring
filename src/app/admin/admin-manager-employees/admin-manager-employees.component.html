@@ -1,7 +1,7 @@
 <div class="main" style="font-size: medium">
     <div class="container-fluid">
         <h4>View Employees of Manager</h4>
-        <form [formGroup] = "ManagerForm" (ngSubmit)="onSubmit(ManagerForm.value)">
+        <form [formGroup] = "ManagerForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
                 <label>
                     Manager-ID :  
@@ -16,5 +16,22 @@
         </div>
         <button class="btn btn-primary" type="submit" [disabled]="ManagerForm.invalid">View</button>
     </form>    
+    </div>
+    <div *ngIf="displayTable">
+            <table>
+            <tr>
+                <th>Employee ID </th>
+                <th>Employee Name</th>
+                <th>Department ID</th>
+            </tr>
+            <tr *ngFor="let employee of employeesList">
+                <td>{{employee.employee_id}}</td>
+                <td>{{employee.last_name +" "+employee.first_name}}</td>
+                <td>{{employee.department.department_id}}</td>
+            </tr>
+            </table>
+    </div>
+    <div *ngIf="isEmpty">
+        <div class="alert alert-warning">No Employees found</div>
     </div>
 </div>    

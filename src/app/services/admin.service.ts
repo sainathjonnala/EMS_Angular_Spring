@@ -18,28 +18,28 @@ export class AdminService {
     return this.httpClient.post<Employee>(this.baseURL + "/createEmployee" , employee).pipe(catchError(this.handler))
   }
 
-  removeUser(employee: Employee) : Observable<Employee>{
-    return this.httpClient.delete<Employee>(this.baseURL + "/removeEmployee/" + employee.employee_id).pipe(catchError(this.handler))
+  removeUser(employee_id: string) : Observable<Employee>{
+    return this.httpClient.delete<Employee>(this.baseURL + "/removeEmployee/" + employee_id).pipe(catchError(this.handler))
   }
 
-  getEmployees(employeesList: Employee[]) : Observable<Employee[]>{
+  getEmployees() : Observable<Employee[]>{
     return this.httpClient.get<Employee[]>(this.baseURL + "/employees")
   }
 
-  getDepartments(departmentsList: Department[]) : Observable<Department[]>{
+  getDepartments() : Observable<Department[]>{
     return this.httpClient.get<Department[]>(this.baseURL + "/departments")
   }
 
-  getEmployee(employee: Employee) : Observable<Employee>{
-    return this.httpClient.get<Employee>(this.baseURL + "/employee/" + employee.employee_id).pipe(catchError(this.notFound))
+  getEmployee(employee_id : string) : Observable<Employee>{
+    return this.httpClient.get<Employee>(this.baseURL + "/employee/" + employee_id).pipe(catchError(this.notFound))
   }
 
-  getManagerEmployees(employee: Employee) : Observable<Employee[]>{
-    return this.httpClient.get<Employee[]>(this.baseURL + "/employeesOfManager/" + employee.employee_id).pipe(catchError(this.notFound))
+  getManagerEmployees(manager_id: string) : Observable<Employee[]>{
+    return this.httpClient.get<Employee[]>(this.baseURL + "/employeesOfManager/" + manager_id).pipe(catchError(this.notFound))
   }
 
   getSalaries(salaryFrom: number, salaryTo: number) : Observable<Employee[]>{
-    return this.httpClient.get<Employee[]>(this.baseURL + "/salaries/" + salaryFrom + salaryTo).pipe(catchError(this.notFound))
+    return this.httpClient.get<Employee[]>(this.baseURL + "/salaries/" + salaryFrom +"/" + salaryTo).pipe(catchError(this.notFound))
   }
 
   notFound(error: HttpErrorResponse) {

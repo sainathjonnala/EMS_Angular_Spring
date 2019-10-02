@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Employee } from 'src/app/models/employee';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-admin-create',
@@ -9,10 +10,12 @@ import { Employee } from 'src/app/models/employee';
 })
 export class AdminCreateComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private adminService : AdminService) { }
 
   ngOnInit() {
   }
+
+  employee: Employee;
 
   AddEmployeeForm = this.formBuilder.group({
 
@@ -63,7 +66,32 @@ export class AdminCreateComponent implements OnInit {
     return this.AddEmployeeForm.get('salary');
   }
 
-  onSubmit(employee : Employee){
-    console.log(employee)
+  onSubmit(){
+    this.employee = {
+
+      last_name  : this.AddEmployeeForm.value.last_name,
+      first_name : this.AddEmployeeForm.value.first_name,
+      employee_id : this.AddEmployeeForm.value.employee_id,
+      salary : this.AddEmployeeForm.value.salary,
+      address : this.AddEmployeeForm.value.address,
+      email : this.AddEmployeeForm.value.email,
+      department : {
+        department_id : this.AddEmployeeForm.value.department_id,
+        department_name : ""
+      },
+      login : {
+        username : "",
+        password : "",
+        role : {
+          role_id : this.AddEmployeeForm.value.role_id,
+          role_name : "",
+        }
+      },
+      manager_id : this.AddEmployeeForm.value.manager_id
+    }
+    console.log(this.employee);
+    this.adminService.addUser(this.employee).subscribe((data) =>{
+      console.log(data)
+    })
   }
 }

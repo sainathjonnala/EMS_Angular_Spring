@@ -8,11 +8,13 @@ import { AdminDepartmentsListComponent } from './admin-departments-list/admin-de
 import { AdminEmployeeDetailsComponent } from './admin-employee-details/admin-employee-details.component';
 import { AdminManagerEmployeesComponent } from './admin-manager-employees/admin-manager-employees.component';
 import { AdminSalariesComponent } from './admin-salaries/admin-salaries.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 
 const adminRoutes: Routes = [
 {
   path: 'admin', component: AdminComponent, children: [
+    { path: 'home', component: AdminHomeComponent},
     { path: 'add', component: AdminCreateComponent },
     { path: 'remove', component: AdminRemoveComponent },
     { path: 'employees', component: AdminEmployeesListComponent },

@@ -5,11 +5,13 @@ import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeCancelLeaveComponent } from './employee-cancel-leave/employee-cancel-leave.component';
 import { EmployeeLeavesComponent } from './employee-leaves/employee-leaves.component';
 import { EmployeeLeaveBalanceComponent } from './employee-leave-balance/employee-leave-balance.component';
+import { EmployeeHomeComponent } from './employee-home/employee-home.component';
 
 
 const employeeRoutes: Routes = [
   { 
     path: 'employee' , component: EmployeeComponent, children: [
+      { path: 'home', component: EmployeeHomeComponent},
       { path: 'applyLeave' , component: EmployeeApplyLeaveComponent},
       { path: 'cancelLeave' , component: EmployeeCancelLeaveComponent},
       { path: 'leaves' , component: EmployeeLeavesComponent},

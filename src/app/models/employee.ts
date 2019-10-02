@@ -10,7 +10,7 @@ export class Employee {
     employee_id : string;
     manager_id : string;
     salary : number;
-    pf : number;
+    pf? : number;
     leave_balance? : LeaveBalance;
     department? : Department;
     login? : Login;

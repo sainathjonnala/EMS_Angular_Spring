@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Employee } from 'src/app/models/employee';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-admin-remove',
@@ -9,10 +10,12 @@ import { Employee } from 'src/app/models/employee';
 })
 export class AdminRemoveComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private adminService: AdminService) { }
 
   ngOnInit() {
   }
+
+  employee: Employee;
 
   RemoveEmployeeForm = this.formBuilder.group({
     employee_id : ['', Validators.required]
@@ -22,8 +25,13 @@ export class AdminRemoveComponent implements OnInit {
     return this.RemoveEmployeeForm.get('employee_id');
   }
 
-  onSubmit(employee: Employee){
-    console.log(employee)
+  onSubmit(){
+    this.adminService.removeUser(this.RemoveEmployeeForm.value.employee_id).subscribe(
+      (data) => {
+        console.log(data);
+      }
+    )
+
   }
 
 }
