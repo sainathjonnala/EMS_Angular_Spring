@@ -1,10 +1,10 @@
-<!-- <div class="header">  
+<div class="header">  
     <h5>
         <p>
         Logged in as:<br/>
-        username: {{employeeDetails.username | uppercase}}<br/>
-        name: {{employeeDetails.last_name || employeeDetails.first_name}}
+        UserName: {{employee.login.username | uppercase}}<br/>
+        Name: {{employee.last_name ||" " || employee.first_name}}<br/>
+        Reporting To: {{employee.manager_id}}
         </p>
     </h5>
-</div>   -->
-<div class="header">works</div>
+</div>  

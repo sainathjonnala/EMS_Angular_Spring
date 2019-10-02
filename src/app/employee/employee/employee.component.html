@@ -1,10 +1,11 @@
 <div class="sidenav">
+        <a routerLink="home" routerLinkActive="active">Home</a>
         <a routerLink="applyLeave" routerLinkActive="active">Apply Leave</a>
         <a routerLink="cancelLeave" routerLinkActive="active">Cancel leave</a>
         <a routerLink="leaveBalance" routerLinkActive="active">leave Balance</a>
         <a routerLink="leaves" routerLinkActive="active">Leave Transactions</a>
 </div>
 <div class="header">
-        <h3>welcome user: {{employeeDetails.username | uppercase}} </h3>
+        <h4>Leave Management System</h4>
 </div>
 <router-outlet></router-outlet>

@@ -12,7 +12,7 @@ export class EmployeeComponent implements OnInit {
   employee: Employee
   ngOnInit() {
      this.employee = JSON.parse(sessionStorage.getItem('employeeDetails'))
-    console.log(this.employee)
+     console.log(this.employee)
   }
 
 }

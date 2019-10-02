@@ -12,7 +12,7 @@ export class AdminService {
 
   constructor(private httpClient: HttpClient) { }
 
-  baseURL: string = "http://localhost:8181/EMS"
+  baseURL: string = "http://localhost:8181/EMS";
 
   addUser(employee: Employee) : Observable<Employee>{
     return this.httpClient.post<Employee>(this.baseURL + "/createEmployee" , employee).pipe(catchError(this.handler))
