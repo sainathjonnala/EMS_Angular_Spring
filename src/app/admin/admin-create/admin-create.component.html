@@ -43,12 +43,12 @@
                         Email :  
                     </label>
                     &nbsp;
-                    <input [class.is-valid] = "email.is-valid && email.touched" type="text" formControlName='email' id="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"/>
+                    <input [class.is-valid] = "email.is-valid && email.touched" type="text" formControlName='email' id="email">
                     <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
                         <div *ngIf="email.errors.required">
                             Email is required.
                         </div>
-                        <div *ngIf="email.errors.pattern">
+                        <div *ngIf="email.errors.email">
                                 Enter email in correct format.
                         </div>
                     </div>

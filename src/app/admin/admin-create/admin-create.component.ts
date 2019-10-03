@@ -21,7 +21,7 @@ export class AdminCreateComponent implements OnInit {
 
     last_name : ['', Validators.required ],
     first_name : ['', Validators.required ],
-    email: ['', Validators.required, Validators.pattern('\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+')],
+    email: ['', [Validators.required, Validators.email]],
     address : ['', Validators.required ],
     employee_id : ['', Validators.required ],
     salary : ['', Validators.required ],
