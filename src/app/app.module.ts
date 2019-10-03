@@ -23,6 +23,13 @@ import { EmployeeCancelLeaveComponent } from './employee/employee-cancel-leave/e
 import { AdminModule } from './admin/admin.module';
 import { EmployeeModule } from './employee/employee.module';
 import { EmployeeLeaveBalanceComponent } from './employee/employee-leave-balance/employee-leave-balance.component';
+import { ManagerLeaveRequestsComponent } from './manager/manager-leave-requests/manager-leave-requests.component';
+import { ManagerCancelLeaveComponent } from './manager/manager-cancel-leave/manager-cancel-leave.component';
+import { ManagerHomeComponent } from './manager/manager-home/manager-home.component';
+import { ManagerApplyLeaveComponent } from './manager/manager-apply-leave/manager-apply-leave.component';
+import { ManagerLeaveBalanceComponent } from './manager/manager-leave-balance/manager-leave-balance.component';
+import { ManagerComponent } from './manager/manager/manager.component';
+import { ManagerModule } from './manager/manager.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +47,13 @@ import { EmployeeLeaveBalanceComponent } from './employee/employee-leave-balance
     EmployeeComponent,
     EmployeeLeavesComponent,
     EmployeeCancelLeaveComponent,
-    EmployeeLeaveBalanceComponent
+    EmployeeLeaveBalanceComponent,
+    ManagerLeaveRequestsComponent,
+    ManagerCancelLeaveComponent,
+    ManagerHomeComponent,
+    ManagerApplyLeaveComponent,
+    ManagerLeaveBalanceComponent,
+    ManagerComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +64,8 @@ import { EmployeeLeaveBalanceComponent } from './employee/employee-leave-balance
     BrowserAnimationsModule,
     MatSidenavModule,
     AdminModule,
-    EmployeeModule
+    EmployeeModule,
+    ManagerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

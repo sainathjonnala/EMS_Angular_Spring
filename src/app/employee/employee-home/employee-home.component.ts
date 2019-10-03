@@ -12,7 +12,7 @@ export class EmployeeHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.employee = JSON.parse(sessionStorage.getItem('employeeDetails'))
+    this.employee = JSON.parse(sessionStorage.getItem('employeeDetails'));
   }
 
 }

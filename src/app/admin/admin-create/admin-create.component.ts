@@ -21,7 +21,7 @@ export class AdminCreateComponent implements OnInit {
 
     last_name : ['', Validators.required ],
     first_name : ['', Validators.required ],
-    email: ['', Validators.required, Validators.email ],
+    email: ['', Validators.required, Validators.pattern('\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+')],
     address : ['', Validators.required ],
     employee_id : ['', Validators.required ],
     salary : ['', Validators.required ],
@@ -89,7 +89,6 @@ export class AdminCreateComponent implements OnInit {
       },
       manager_id : this.AddEmployeeForm.value.manager_id
     }
-    console.log(this.employee);
     this.adminService.addUser(this.employee).subscribe((data) =>{
       console.log(data)
     })

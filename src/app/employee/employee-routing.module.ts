@@ -6,6 +6,7 @@ import { EmployeeCancelLeaveComponent } from './employee-cancel-leave/employee-c
 import { EmployeeLeavesComponent } from './employee-leaves/employee-leaves.component';
 import { EmployeeLeaveBalanceComponent } from './employee-leave-balance/employee-leave-balance.component';
 import { EmployeeHomeComponent } from './employee-home/employee-home.component';
+import { ManagerLeavesComponent } from '../manager/manager-leaves/manager-leaves.component';
 
 
 const employeeRoutes: Routes = [

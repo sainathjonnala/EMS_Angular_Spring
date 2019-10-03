@@ -9,10 +9,9 @@ import { Employee } from 'src/app/models/employee';
 export class EmployeeComponent implements OnInit {
 
   constructor() { }
-  employee: Employee
+  employee: Employee;
   ngOnInit() {
-     this.employee = JSON.parse(sessionStorage.getItem('employeeDetails'))
-     console.log(this.employee)
+     this.employee = JSON.parse(sessionStorage.getItem('employeeDetails'));
   }
 
 }

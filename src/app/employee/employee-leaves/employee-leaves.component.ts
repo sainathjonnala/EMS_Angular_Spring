@@ -18,12 +18,14 @@ export class EmployeeLeavesComponent implements OnInit {
 
   ngOnInit() {
     this.employee = JSON.parse(sessionStorage.getItem('employeeDetails'));
-    this.leaveService.getLeaveTransactions(this.employee.employee_id).subscribe(
-      
+    this.leaveService.getLeaveTransactions(this.employee.employee_id).subscribe( 
       ( data ) => {
 
         if( data.length > 0 ){
+          console.log(data);
+          
           this.leavesList = data;
+          
           this.isEmpty = false;
         }
         else{

@@ -5,26 +5,25 @@ import { Leave } from 'src/app/models/leave';
 import { Employee } from 'src/app/models/employee';
 
 @Component({
-  selector: 'app-employee-apply-leave',
-  templateUrl: './employee-apply-leave.component.html',
-  styleUrls: ['./employee-apply-leave.component.css']
+  selector: 'app-manager-apply-leave',
+  templateUrl: './manager-apply-leave.component.html',
+  styleUrls: ['./manager-apply-leave.component.css']
 })
-export class EmployeeApplyLeaveComponent implements OnInit {
-
+export class ManagerApplyLeaveComponent implements OnInit {
   leave: Leave;
   employee: Employee;
 
   constructor(private formBuilder: FormBuilder, private leaveService: EmployeeLeaveService) { }
 
   ngOnInit() {
-    this.employee = JSON.parse(sessionStorage.getItem('employeeDetails'))
+    this.employee = JSON.parse(sessionStorage.getItem('managerDetails'))
   }
 
   ApplyLeaveForm = this.formBuilder.group({
     leave_type : [''],
     from_date: ['', Validators.required],
     to_date: ['', Validators.required],
-    apply_to: [''],
+    apply_to: ['',],
     reason: [''],
   })
 

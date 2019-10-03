@@ -43,12 +43,22 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['admin'])
 
         }
-        else if (data.role.role_name == "employee" || data.role.role_name == "manager") {
+        else if (data.role.role_name === "employee") {
           this.loginService.getUser(loginCredentials).subscribe(
             (data) => {
+              console.log(data);
+              
               sessionStorage.setItem('employeeDetails',JSON.stringify(data))
               this.router.navigate(['employee'])
               
+            }
+          )
+        }
+        else if(data.role.role_name === "manager"){
+          this.loginService.getUser(loginCredentials).subscribe(
+            (data) => {
+              sessionStorage.setItem('managerDetails',JSON.stringify(data))
+              this.router.navigate(['manager'])      
             }
           )
         }

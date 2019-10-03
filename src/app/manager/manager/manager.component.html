@@ -1,0 +1,21 @@
+<div class="sidenav">
+    <div *ngIf="employee.employee_id != employee.manager_id">
+    <a routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="applyLeave" routerLinkActive="active">Apply Leave</a>
+    <a routerLink="cancelLeave" routerLinkActive="active">Cancel leave</a>
+    <a routerLink="leaveBalance" routerLinkActive="active">leave Balance</a>
+    <a routerLink="leaves" routerLinkActive="active">Leave Transactions</a>
+    <a routerLink="requests" routerLinkActive="active">Leave Requests</a>
+    </div>
+
+    <div *ngIf="employee.employee_id == employee.manager_id">
+            <a routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            <a routerLink="requests" routerLinkActive="active">Leave Requests</a>
+    </div>
+</div>
+
+<div class="header">
+    <h4>Leave Management System</h4>
+    
+</div>
+<router-outlet></router-outlet>

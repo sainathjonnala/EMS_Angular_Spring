@@ -20,13 +20,8 @@ export class EmployeeLeaveBalanceComponent implements OnInit {
       (data) => {
         if(data != null){
           this.employee.leave_balance = data;
-          console.log(this.employee.leave_balance);
-        }
-        
-        
+        }   
       }
     )
-
   }
-
 }
