@@ -10,12 +10,13 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AdminCreateComponent implements OnInit {
 
+  employee: Employee;
+  isAdded: String;
+
   constructor(private formBuilder: FormBuilder, private adminService : AdminService) { }
 
   ngOnInit() {
   }
-
-  employee: Employee;
 
   AddEmployeeForm = this.formBuilder.group({
 
@@ -90,7 +91,14 @@ export class AdminCreateComponent implements OnInit {
       manager_id : this.AddEmployeeForm.value.manager_id
     }
     this.adminService.addUser(this.employee).subscribe((data) =>{
+
       console.log(data)
+      if(data == 'true'){
+        this.isAdded = "true";
+      }
+      else{
+        this.isAdded = "false";
+      }
     })
   }
 }

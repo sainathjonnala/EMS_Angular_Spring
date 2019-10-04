@@ -1,15 +1,21 @@
 <div class="main">
-        <h4>Leaves Directory</h4>
-    <table>
-        <tr>
-            <th>Leave Balance Id</th>
-            <th>No of Casual Leaves</th>
-            <th>Loss of Pay Leaves</th>
-        </tr>
-        <tr>
-            <td>{{manager.leave_balance.id}}</td>
-            <td>{{manager.leave_balance.casual_leaves}}</td>
-            <td>{{manager.leave_balance.loss_of_pay}}</td>
-        </tr>
-    </table>
+    <div class="card">
+        <div class="card-header">
+            <h4>Leaves Directory</h4>
+        </div>
+        <div class="card-body">
+            <table>
+                    <tr>
+                        <th>Leave Balance Id</th>
+                        <th>No of Casual Leaves</th>
+                        <th>Loss of Pay Leaves</th>
+                    </tr>
+                    <tr>
+                        <td>{{manager.leave_balance.id}}</td>
+                        <td>{{manager.leave_balance.casual_leaves}}</td>
+                        <td>{{manager.leave_balance.loss_of_pay}}</td>
+                    </tr>
+            </table>
+        </div>
+    </div>
 </div>

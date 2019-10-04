@@ -1,36 +1,36 @@
-<div class="container-fluid">
-    <h3>login Page</h3>
-    <form [formGroup] = "LoginForm" (ngSubmit)="onSubmit(LoginForm.value)">
-        <div class="form-group">
-            <label>
-                UserName :  
-            </label>
-            &nbsp;
-            <input [class.is-valid] = "username.is-valid && username.touched" type="text" formControlName='username' id="username">
-            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
-                <div *ngIf="username.errors.required">
-                    Name is required.
-                </div>
-            </div>
+<div class="card text-center">
+    <div class="card-header">
+        <h2>Login Page</h2>
+    </div>
+    <div class="card-body">
+        <form [formGroup] = "LoginForm" (ngSubmit)="onSubmit(LoginForm.value)">
+        <div class="card-title">
+            <h5>Enter UserName and Password</h5>
         </div>
         <div class="form-group">
-            <label>
-                Password :
-            </label>
-            &nbsp;
-            <input [class.is-valid] = "password.is-valid && password.touched" type="password" formControlName='password' id="password">
-                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+            <label class="col-sm-2 col-form-label">UserName :  </label>
+                <input [class.is-valid] = "username.is-valid && username.touched" type="text" formControlName='username' id="username">
+                <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger">
+                    <div *ngIf="username.errors.required">
+                        Name is required.
+                    </div>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 col-form-label">Password :  </label>
+                <input [class.is-valid] = "password.is-valid && password.touched" type="password" formControlName='password' id="password">
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
                     <div *ngIf="password.errors.required">
-                        Password is required.
+                            Password is required.
                     </div>
                 </div>   
         </div>
-        <button  class="btn btn-primary" type="submit" [disabled]="LoginForm.invalid">Submit</button>
-        <div *ngIf="invalid" class="alert alert-danger">
-            Invalid Credentials!! Try Again!!
+        <div class="form-group">
+                <button  class="btn btn-primary" type="submit" [disabled]="LoginForm.invalid">Submit</button>
+                    <div *ngIf="invalid" class="alert alert-danger">
+                    Invalid Credentials!! Try Again!!
+                </div>
         </div>
-    </form>
-
-</div>
-
-
+        </form>	
+    </div>
+</div>	

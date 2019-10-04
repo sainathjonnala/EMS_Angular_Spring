@@ -11,12 +11,13 @@ import { Employee } from 'src/app/models/employee';
 })
 export class ManagerApplyLeaveComponent implements OnInit {
   leave: Leave;
-  employee: Employee;
+  manager: Employee;
+  isApplied: String;
 
   constructor(private formBuilder: FormBuilder, private leaveService: EmployeeLeaveService) { }
 
   ngOnInit() {
-    this.employee = JSON.parse(sessionStorage.getItem('managerDetails'))
+    this.manager = JSON.parse(sessionStorage.getItem('managerDetails'))
   }
 
   ApplyLeaveForm = this.formBuilder.group({
@@ -42,17 +43,23 @@ export class ManagerApplyLeaveComponent implements OnInit {
   onSubmit(){
     this.leave = {
       leave_type : this.ApplyLeaveForm.value.leave_type,
-      apply_to : this.employee.manager_id,
+      apply_to : this.manager.manager_id,
       from_date: this.ApplyLeaveForm.value.from_date,
       to_date: this.ApplyLeaveForm.value.to_date,
       status: 'pending',
-      employee: this.employee,
+      employee: this.manager,
       reason: this.ApplyLeaveForm.value.reason
     }
     console.log(this.leave);
     this.leaveService.applyLeave(this.leave).subscribe(
       (data) => {
         console.log(data)
+        if(data == 'true'){
+          this.isApplied = 'true';
+        }
+        else{
+          this.isApplied = 'false';
+        }
       }
     ) 
   }

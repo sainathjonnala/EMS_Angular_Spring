@@ -14,12 +14,12 @@ export class AdminService {
 
   baseURL: string = "http://localhost:8181/EMS";
 
-  addUser(employee: Employee) : Observable<Employee>{
-    return this.httpClient.post<Employee>(this.baseURL + "/createEmployee" , employee).pipe(catchError(this.handler))
+  addUser(employee: Employee) : Observable<String>{
+    return this.httpClient.post<String>(this.baseURL + "/createEmployee" , employee).pipe(catchError(this.handler))
   }
 
-  removeUser(employee_id: string) : Observable<Employee>{
-    return this.httpClient.delete<Employee>(this.baseURL + "/removeEmployee/" + employee_id).pipe(catchError(this.handler))
+  removeUser(employee_id: string) : Observable<String>{
+    return this.httpClient.delete<String>(this.baseURL + "/removeEmployee/" + employee_id).pipe(catchError(this.handler))
   }
 
   getEmployees() : Observable<Employee[]>{

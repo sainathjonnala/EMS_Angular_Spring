@@ -1,119 +1,127 @@
-    <div class="main" style="font-size: medium">
-        <div class="container-fluid">
-            <h4>Add Employee</h4>
+<div class="main">
+    <div class="card" style="font-size: medium">
+        <div class="card-header">
+            Add Employee
+        </div>
+        <div class="card-body">
             <form [formGroup] = "AddEmployeeForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                    <label>
-                        LastName :  
-                    </label>
-                    &nbsp;
-                    <input [class.is-valid] = "last_name.is-valid && last_name.touched" type="text" formControlName='last_name' id="last_name">
-                    <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)" class="alert alert-danger">
-                        <div *ngIf="last_name.errors.required">
-                            LastName is required.
-                        </div>
-                    </div>
-            </div>
-            <div class="form-group">
-                    <label>
-                        FirstName :  
-                    </label>
-                    &nbsp;
-                    <input [class.is-valid] = "first_name.is-valid && first_name.touched" type="text" formControlName='first_name' id="first_name">
-                    <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)" class="alert alert-danger">
-                        <div *ngIf="first_name.errors.required">
-                            FirstName is required.
-                        </div>
-                    </div>
-            </div>
-            <div class="form-group">
-                    <label>
-                        Employee ID :  
-                    </label>
-                    &nbsp;
-                    <input [class.is-valid] = "employee_id.is-valid && employee_id.touched" type="text" formControlName='employee_id' id="employee_id">
-                    <div *ngIf="employee_id.invalid && (employee_id.dirty || employee_id.touched)" class="alert alert-danger">
-                        <div *ngIf="employee_id.errors.required">
-                            Employee ID is required.
-                        </div>
-                    </div>
-            </div>
-            <div class="form-group">
-                    <label>
-                        Email :  
-                    </label>
-                    &nbsp;
-                    <input [class.is-valid] = "email.is-valid && email.touched" type="text" formControlName='email' id="email">
-                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-                        <div *ngIf="email.errors.required">
-                            Email is required.
-                        </div>
-                        <div *ngIf="email.errors.email">
+                <div class="card-title">
+                    Enter Employee Details
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">First Name :  </label>
+                    <div class="col-sm-10">
+                        <input [class.is-valid] = "first_name.is-valid && first_name.touched" type="text" formControlName='first_name' id="first_name">
+                        <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)" class="text-danger">
+                            <div *ngIf="first_name.errors.required">
+                                First Name is required.
+                            </div>
+                            </div>
+                    </div>	
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Last Name :  </label>
+                    <div class="col-sm-10">
+                        <input [class.is-valid] = "last_name.is-valid && last_name.touched" type="last_name" formControlName='last_name' id="last_name">
+                        <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)" class="text-danger">
+                            <div *ngIf="last_name.errors.required">
+                                    Last Name is required.
+                            </div>
+                            </div>   
+                    </div>	
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Employee ID :  </label>
+                    <div class="col-sm-10">
+                        <input [class.is-valid] = "employee_id.is-valid && employee_id.touched" type="employee_id" formControlName='employee_id' id="employee_id">
+                        <div *ngIf="employee_id.invalid && (employee_id.dirty || employee_id.touched)" class="text-danger">
+                            <div *ngIf="employee_id.errors.required">
+                                    Employee ID is required.
+                            </div>
+                            </div>   
+                    </div>	
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Email :  </label>
+                    <div class="col-sm-10">
+                        <input [class.is-valid] = "email.is-valid && email.touched" type="email" formControlName='email' id="email">
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                            <div *ngIf="email.errors.required">
+                                Email is required.
+                            </div>
+                            <div *ngIf="email.errors.email">
                                 Enter email in correct format.
+                            </div>
+                            </div>   
+                    </div>	
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Manager ID :  </label>
+                    <div class="col-sm-10">
+                        <input [class.is-valid] = "manager_id.is-valid && manager_id.touched" type="text" formControlName='manager_id' id="manager_id">
+                        <div *ngIf="manager_id.invalid && (manager_id.dirty || manager_id.touched)" class="text-danger">
+                            <div *ngIf="manager_id.errors.required">
+                                    Manager ID is required.
+                            </div>
+                        </div>  
+                    </div>	
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Department ID :  </label>
+                    <div class="col-sm-10">
+                        <input [class.is-valid] = "department_id.is-valid && department_id.touched" type="text" formControlName='department_id' id="department_id">
+                        <div *ngIf="department_id.invalid && (department_id.dirty || department_id.touched)" class="text-danger">
+                            <div *ngIf="department_id.errors.required">
+                                    Department ID is required.
+                            </div>
                         </div>
-                    </div>
-            </div>
-            <div class="form-group">
-                    <label>
-                        Manager ID :  
-                    </label>
-                    &nbsp;
-                    <input [class.is-valid] = "manager_id.is-valid && manager_id.touched" type="text" formControlName='manager_id' id="manager_id">
-                    <div *ngIf="manager_id.invalid && (manager_id.dirty || manager_id.touched)" class="alert alert-danger">
-                        <div *ngIf="manager_id.errors.required">
-                                Manager ID is required.
+                    </div>	
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Role ID :  </label>
+                    <div class="col-sm-10">
+                        <input [class.is-valid] = "role_id.is-valid && role_id.touched" type="text" formControlName='role_id' id="role_id">
+                        <div *ngIf="role_id.invalid && (role_id.dirty || role_id.touched)" class="text-danger">
+                            <div *ngIf="role_id.errors.required">
+                                    Role ID is required.
+                            </div>
                         </div>
-                    </div>
-            </div>
-            <div class="form-group">
-                    <label>
-                        Department ID :  
-                    </label>
-                    &nbsp;
-                    <input [class.is-valid] = "department_id.is-valid && department_id.touched" type="text" formControlName='department_id' id="department_id">
-                    <div *ngIf="department_id.invalid && (department_id.dirty || department_id.touched)" class="alert alert-danger">
-                        <div *ngIf="department_id.errors.required">
-                                Department ID is required.
+                    </div>	
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Salary :  </label>
+                    <div class="col-sm-10">
+                        <input [class.is-valid] = "salary.is-valid && salary.touched" type="text" formControlName='salary' id="salary">
+                        <div *ngIf="salary.invalid && (salary.dirty || salary.touched)" class="text-danger">
+                            <div *ngIf="salary.errors.required">
+                                    Salary ID is required.
+                            </div>
                         </div>
-                    </div>
-            </div>
-            <div class="form-group">
-                    <label>
-                        Role ID :  
-                    </label>
-                    &nbsp;
-                    <input [class.is-valid] = "role_id.is-valid && role_id.touched" type="text" formControlName='role_id' id="role_id">
-                    <div *ngIf="role_id.invalid && (role_id.dirty || role_id.touched)" class="alert alert-danger">
-                        <div *ngIf="role_id.errors.required">
-                                Role ID is required.
+                    </div>	
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Address :  </label>
+                    <div class="col-sm-10">
+                        <input [class.is-valid] = "address.is-valid && address.touched" type="text" formControlName='address' id="address">
+                        <div *ngIf="address.invalid && (address.dirty || address.touched)" class="text-danger">
+                            <div *ngIf="address.errors.required">
+                                    Address is required.
+                            </div>
                         </div>
-                    </div>
-            </div>
-            <div class="form-group">
-                    <label>
-                        Salary:  
-                    </label>
-                    &nbsp;
-                    <input [class.is-valid] = "salary.is-valid && salary.touched" type="text" formControlName='salary' id="salary">
-                    <div *ngIf="salary.invalid && (salary.dirty || salary.touched)" class="alert alert-danger">
-                        <div *ngIf="salary.errors.required">
-                                Salary is required.
+                    </div>	
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button  class="btn btn-primary" type="submit" [disabled]="AddEmployeeForm.invalid">Submit</button>
+                        <div *ngIf="isAdded == 'true'" class="alert alert-successful">
+                            Employee Added.
                         </div>
-                    </div>
-            </div>
-            <div class="form-group">
-                <label>
-                    Address:  
-                </label>
-                &nbsp;
-                <input [class.is-valid] = "address.is-valid && address.touched" type="text" formControlName='address' id="address">
-                <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger">
-                    <div *ngIf="address.errors.required">
-                            Address is required.
+                        <div *ngIf="isAdded == 'false'" class="alert alert-danger">
+                            Employee Not Added.
+                        </div>
                     </div>
                 </div>
-            </div>
-            <button class="btn btn-primary" type="submit" [disabled]="AddEmployeeForm.invalid">Create</button>
-            </form>    
+            </form>	
         </div>
-    </div>
+    </div>		
+</div>

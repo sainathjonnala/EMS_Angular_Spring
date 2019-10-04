@@ -1,20 +1,32 @@
 <div class="main" style="font-size: medium">
-    <div class="container-fluid">
-        <h4>Remove Employee</h4>
-        <form [formGroup] = "RemoveEmployeeForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-                <label>
-                    Employee-ID :  
-                </label>
-                &nbsp;
-                <input [class.is-valid] = "employee_id.is-valid && employee_id.touched" type="text" formControlName='employee_id' id="employee_id">
-                <div *ngIf="employee_id.invalid && (employee_id.dirty || employee_id.touched)" class="alert alert-danger">
-                    <div *ngIf="employee_id.errors.required">
-                        Employee-ID is required.
-                    </div>
-                </div>
+    <div class="card">
+        <div class="card-header">
+            <h4>Remove Employee</h4>
         </div>
-        <button class="btn btn-primary"  type="submit" [disabled]="RemoveEmployeeForm.invalid">Remove</button>
-    </form>    
-</div>
+        <div class="card-body">
+            <form [formGroup] = "RemoveEmployeeForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                        <label>
+                            Employee-ID :  
+                        </label>
+                        &nbsp;
+                        <input [class.is-valid] = "employee_id.is-valid && employee_id.touched" type="text" formControlName='employee_id' id="employee_id">
+                        <div *ngIf="employee_id.invalid && (employee_id.dirty || employee_id.touched)" class="text-danger">
+                            <div *ngIf="employee_id.errors.required">
+                                Employee-ID is required.
+                            </div>
+                        </div>
+                </div>
+                {{isRemoved}}
+                <button class="btn btn-primary"  type="submit" [disabled]="RemoveEmployeeForm.invalid">Remove</button>
+            </form>
+            <div *ngIf="isRemoved =='true'" class="alert alert-success">
+                Employee Removed Successfully.
+            </div>
+            <div *ngIf="isRemoved =='false'" class="alert alert-warning">
+                Enter Valid Employee-ID.
+            </div>
+
+        </div>    
+    </div>
 </div>    

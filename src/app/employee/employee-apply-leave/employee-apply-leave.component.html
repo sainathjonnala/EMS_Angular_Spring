@@ -1,57 +1,67 @@
 <div class="main" style="font-size: medium">
-    <div class="container-fluid">   
-        <h4>Leave Application</h4>
-        <form [formGroup] = "ApplyLeaveForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label>
-                    Leave Type :  
-                </label>
-                &nbsp;
-                <select formControlName="leave_type">
-                    <option value="" disabled>Select Leave Type</option>
-                    <option value="casual">casual</option>
-                    <option value="loss_of_pay">loss_of_pay</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>
-                    From Date:
-                </label>
-                &nbsp;
-                <input [class.is-valid] = "from_date.is-valid && from_date.touched" type="date" formControlName='from_date' id="from_date">
-                    <div *ngIf="from_date.invalid && (from_date.dirty || from_date.touched)" class="alert alert-danger">
-                        <div *ngIf="from_date.errors.required">
-                            From Date is required.
-                        </div>
+    <div class="card">   
+        <div class="card-header">
+            <h4>Leave Application</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup] = "ApplyLeaveForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label>
+                        Leave Type :  
+                    </label>
+                    &nbsp;
+                    <select formControlName="leave_type">
+                        <option value="" disabled>Select Leave Type</option>
+                        <option value="casual">casual</option>
+                        <option value="loss_of_pay">loss_of_pay</option>
+                    </select>
                 </div>
-            </div>
-            <div class="form-group">
-                <label>
-                    To Date:
-                </label>
-                &nbsp;
-                <input [class.is-valid] = "to_date.is-valid && to_date.touched" type="date" formControlName='to_date' id="to_date">
-                    <div *ngIf="to_date.invalid && (to_date.dirty || to_date.touched)" class="alert alert-danger">
-                        <div *ngIf="to_date.errors.required">
-                            To Date is required.
-                        </div>
+                <div class="form-group">
+                    <label>
+                        From Date:
+                    </label>
+                    &nbsp;
+                    <input [class.is-valid] = "from_date.is-valid && from_date.touched" type="date" formControlName='from_date' id="from_date">
+                        <div *ngIf="from_date.invalid && (from_date.dirty || from_date.touched)" class="alert alert-danger">
+                            <div *ngIf="from_date.errors.required">
+                                From Date is required.
+                            </div>
+                    </div>
                 </div>
+                <div class="form-group">
+                    <label>
+                        To Date:
+                    </label>
+                    &nbsp;
+                    <input [class.is-valid] = "to_date.is-valid && to_date.touched" type="date" formControlName='to_date' id="to_date">
+                        <div *ngIf="to_date.invalid && (to_date.dirty || to_date.touched)" class="alert alert-danger">
+                            <div *ngIf="to_date.errors.required">
+                                To Date is required.
+                            </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Apply To:
+                    </label>
+                    &nbsp;
+                    <input type="text" formControlName='apply_to' id="apply_to" [value]="employee.manager_id" disabled/>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Reason :
+                    </label>
+                    &nbsp;
+                    <textarea rows="1" cols="30" formControlName="reason"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit" [disabled]="ApplyLeaveForm.invalid">Apply</button>
+            </form>
+            <div *ngIf="isApplied == 'true'" class="alert alert-success">
+                Leave Applied Successfully.
             </div>
-            <div class="form-group">
-                <label>
-                    Apply To:
-                </label>
-                &nbsp;
-                <input type="text" formControlName='apply_to' id="apply_to" [value]="employee.manager_id" readonly/>
+            <div *ngIf="isApplied == 'false'" class="alert alert-info">
+                Check Leave Details and Try Again. 
             </div>
-            <div class="form-group">
-                <label>
-                    Reason :
-                </label>
-                &nbsp;
-                <textarea rows="1" cols="30" formControlName="reason"></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit" [disabled]="ApplyLeaveForm.invalid">Apply</button>
-        </form>     
+        </div>     
     </div>
 </div>        

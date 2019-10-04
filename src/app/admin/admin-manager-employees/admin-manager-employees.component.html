@@ -1,37 +1,42 @@
 <div class="main" style="font-size: medium">
-    <div class="container-fluid">
-        <h4>View Employees of Manager</h4>
-        <form [formGroup] = "ManagerForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
+    <div class="card">
+        <div class="card-header">
+                <h4>View Employees of Manager</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup] = "ManagerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
                 <label>
                     Manager-ID :  
                 </label>
                 &nbsp;
                 <input [class.is-valid] = "manager_id.is-valid && manager_id.touched" type="text" formControlName='manager_id' id="manager_id">
-                <div *ngIf="manager_id.invalid && (manager_id.dirty || manager_id.touched)" class="alert alert-danger">
+                <div *ngIf="manager_id.invalid && (manager_id.dirty || manager_id.touched)" class="text-danger">
                     <div *ngIf="manager_id.errors.required">
                         Manager-ID is required.
                     </div>
                 </div>
-        </div>
-        <button class="btn btn-primary" type="submit" [disabled]="ManagerForm.invalid">View</button>
-    </form>    
-    </div>
-    <div *ngIf="displayTable">
-            <table>
-            <tr>
-                <th>Employee ID </th>
-                <th>Employee Name</th>
-                <th>Department ID</th>
-            </tr>
-            <tr *ngFor="let employee of employeesList">
-                <td>{{employee.employee_id}}</td>
-                <td>{{employee.last_name +" "+employee.first_name}}</td>
-                <td>{{employee.department.department_id}}</td>
-            </tr>
-            </table>
-    </div>
-    <div *ngIf="isEmpty">
-        <div class="alert alert-warning">No Employees found</div>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="ManagerForm.invalid">View</button>
+    
+            <div *ngIf="displayTable">
+                <table>
+                <tr>
+                    <th>Employee ID </th>
+                    <th>Employee Name</th>
+                    <th>Department ID</th>
+                </tr>
+                <tr *ngFor="let employee of employeesList">
+                    <td>{{employee.employee_id}}</td>
+                    <td>{{employee.last_name +" "+employee.first_name}}</td>
+                    <td>{{employee.department.department_id}}</td>
+                </tr>
+                </table>
+            </div>
+            <div *ngIf="isEmpty">
+                <div class="alert alert-warning">No Employees found</div>
+            </div>
+            </form>  
+        </div>  
     </div>
 </div>    

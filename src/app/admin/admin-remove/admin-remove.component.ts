@@ -10,6 +10,8 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AdminRemoveComponent implements OnInit {
 
+  isRemoved: String;
+
   constructor(private formBuilder: FormBuilder, private adminService: AdminService) { }
 
   ngOnInit() {
@@ -29,9 +31,14 @@ export class AdminRemoveComponent implements OnInit {
     this.adminService.removeUser(this.RemoveEmployeeForm.value.employee_id).subscribe(
       (data) => {
         console.log(data);
+        if(data == 'true'){
+          this.isRemoved = 'true';
+        }
+        else{
+          this.isRemoved = 'false';
+     
+        }
       }
     )
-
   }
-
 }

@@ -1,25 +1,32 @@
 <div class="main">
     <div *ngIf="!isEmpty">
-        <h4>Leaves Directory</h4>
-    <table>
-    <tr>
-        <th>Leave ID </th>
-        <th>Leave Type</th>
-		<th>Status</th>
-		<th>From Date</th>
-        <th>To Date</th>
-    </tr>
-    <tr *ngFor="let leave of leavesList">
-        <td>{{leave.leave_id}}</td>
-        <td>{{leave.leave_type}}</td>
-        <td>{{leave.status}}</td>
-        <td>{{leave.from_date}}</td>
-        <td>{{leave.to_date}}</td>
-        <td><button class="btn btn-primary" (click)="cancelLeave(leave)">cancel</button></td>
-    </tr>
-    </table>
-    </div>
-    <div *ngIf="isEmpty">
-        <div class="alert alert-warning">No Currently Applied Leave Transactions</div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Leaves Applied Currently</h4>
+            </div>
+            <div class="card-body">      
+                <table>
+                <tr>
+                    <th>Leave ID </th>
+                    <th>Leave Type</th>
+                    <th>Status</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Cancel Leave</th>
+                </tr>
+                <tr *ngFor="let leave of leavesList">
+                    <td>{{leave.leave_id}}</td>
+                    <td>{{leave.leave_type}}</td>
+                    <td>{{leave.status}}</td>
+                    <td>{{leave.from_date}}</td>
+                    <td>{{leave.to_date}}</td>
+                    <td><button class="btn btn-primary" (click)="cancelLeave(leave)">cancel</button></td>
+                </tr>
+                </table>
+                <div *ngIf="isEmpty">
+                    <div class="alert alert-warning">No Currently Applied Leave Transactions</div>
+                </div>
+            </div>  
+        </div>    
     </div>
 </div>

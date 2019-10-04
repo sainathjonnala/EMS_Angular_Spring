@@ -1,4 +1,4 @@
-@import "~bootstrap/dist/css/bootstrap.css"; 
+/* @import "~bootstrap/dist/css/bootstrap.css";  */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .sidenav {
@@ -10,7 +10,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   left: 0;
   background-color: #111;
   overflow-x: hidden;
-  padding-top: 50px;
+  padding-top: 58px;
 }
 
 .sidenav a {

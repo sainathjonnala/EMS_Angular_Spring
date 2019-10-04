@@ -24,10 +24,8 @@ export class ManagerLeaveRequestsComponent implements OnInit {
       ( data ) => {
 
         if( data.length > 0 ){
-          console.log(data);
-          
-          this.requestsList = data;
-          
+          console.log(data);  
+          this.requestsList = data; 
           this.isEmpty = false;
         }
         else{
