@@ -30,6 +30,7 @@ import { ManagerApplyLeaveComponent } from './manager/manager-apply-leave/manage
 import { ManagerLeaveBalanceComponent } from './manager/manager-leave-balance/manager-leave-balance.component';
 import { ManagerComponent } from './manager/manager/manager.component';
 import { ManagerModule } from './manager/manager.module';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ManagerModule } from './manager/manager.module';
     ManagerApplyLeaveComponent,
     ManagerLeaveBalanceComponent,
     ManagerComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

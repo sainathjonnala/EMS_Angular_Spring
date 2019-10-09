@@ -5,29 +5,27 @@
         </div>
         <div class="card-body">
             <form [formGroup] = "SalariesForm" (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                        <label>
-                            Salary From :  
-                        </label>
-                        &nbsp;
-                        <input [class.is-valid] = "salaryFrom.is-valid && salaryFrom.touched" type="text" formControlName='salaryFrom' id="salaryFrom">
-                        <div *ngIf="salaryFrom.invalid && (salaryFrom.dirty || salaryFrom.touched)" class="alert alert-danger">
-                            <div *ngIf="salaryFrom.errors.required">
-                                Salary From is required.
+                <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Salary From :   </label>
+                        <div class="col-sm-10">
+                            <input [class.is-valid] = "salaryFrom.is-valid && salaryFrom.touched" type="text" formControlName='salaryFrom' id="salaryFrom">
+                            <div *ngIf="salaryFrom.invalid && (salaryFrom.dirty || salaryFrom.touched)" class="alert alert-danger">
+                                <div *ngIf="salaryFrom.errors.required">
+                                    Salary From is required.
+                                </div>
                             </div>
                         </div>
                 </div>
-                <div class="form-group">
-                    <label>
-                        Salary To :  
-                    </label>
-                    &nbsp;
-                    <input [class.is-valid] = "salaryTo.is-valid && salaryTo.touched" type="text" formControlName='salaryTo' id="salaryTo">
-                    <div *ngIf="salaryTo.invalid && (salaryTo.dirty || salaryTo.touched)" class="alert alert-danger">
-                        <div *ngIf="salaryTo.errors.required">
-                            Salary From is required.
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Salary To :  </label>
+                    <div class="col-sm-10">
+                        <input [class.is-valid] = "salaryTo.is-valid && salaryTo.touched" type="text" formControlName='salaryTo' id="salaryTo">
+                        <div *ngIf="salaryTo.invalid && (salaryTo.dirty || salaryTo.touched)" class="alert alert-danger">
+                            <div *ngIf="salaryTo.errors.required">
+                                Salary From is required.
+                            </div>
                         </div>
-                    </div>
+                    </div>    
                 </div>
                 <button class="btn btn-primary" type="submit" [disabled]="SalariesForm.invalid">View</button>
             

@@ -14,8 +14,8 @@ export class EmployeeLeaveService {
 
   baseURL: string = "http://localhost:8181/EMS";
 
-  applyLeave(leave: Leave): Observable<string>{
-    return this.httpClient.post<string>(this.baseURL + "/applyLeave" , leave)
+  applyLeave(leave: Leave): Observable<boolean>{
+    return this.httpClient.post<boolean>(this.baseURL + "/applyLeave" , leave)
   }
 
   getLeaveTransactions(employee_id: string): Observable<Leave[]>{

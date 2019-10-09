@@ -22,7 +22,8 @@ export class EmployeeCancelLeaveComponent implements OnInit {
     this.employee = JSON.parse(sessionStorage.getItem('employeeDetails'));
     this.leaveService.getAppliedLeaves(this.employee.employee_id).subscribe( 
       ( data ) => {
-
+        console.log(data);
+        
         if( data.length > 0 ){
           this.leavesList = data;   
           this.isEmpty = false;
@@ -38,6 +39,7 @@ export class EmployeeCancelLeaveComponent implements OnInit {
     
     this.leaveService.cancelLeave(leave).subscribe(
       (data) => {
+        
         if( data.valueOf() ){
           this.ngOnInit();
           this.isCancelled = true;

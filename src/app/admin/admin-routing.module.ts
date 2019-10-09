@@ -9,11 +9,12 @@ import { AdminEmployeeDetailsComponent } from './admin-employee-details/admin-em
 import { AdminManagerEmployeesComponent } from './admin-manager-employees/admin-manager-employees.component';
 import { AdminSalariesComponent } from './admin-salaries/admin-salaries.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminAuthGuard } from '../guards/admin-auth.guard';
 
 
 const adminRoutes: Routes = [
 {
-  path: 'admin', component: AdminComponent, children: [
+  path: 'admin', component: AdminComponent,canActivate: [AdminAuthGuard], children: [
     { path: 'home', component: AdminHomeComponent},
     { path: 'add', component: AdminCreateComponent },
     { path: 'remove', component: AdminRemoveComponent },

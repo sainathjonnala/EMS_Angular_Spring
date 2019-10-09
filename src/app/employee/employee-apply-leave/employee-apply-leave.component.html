@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label>
-                        From Date:
+                        From Date :
                     </label>
                     &nbsp;
                     <input [class.is-valid] = "from_date.is-valid && from_date.touched" type="date" formControlName='from_date' id="from_date">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label>
-                        To Date:
+                        To Date :
                     </label>
                     &nbsp;
                     <input [class.is-valid] = "to_date.is-valid && to_date.touched" type="date" formControlName='to_date' id="to_date">
@@ -42,10 +42,10 @@
                 </div>
                 <div class="form-group">
                     <label>
-                        Apply To:
+                        Apply To :
                     </label>
                     &nbsp;
-                    <input type="text" formControlName='apply_to' id="apply_to" [value]="employee.manager_id" disabled/>
+                    <input type="text" formControlName='apply_to' id="apply_to" [value]="employee.manager_id"/>
                 </div>
                 <div class="form-group">
                     <label>

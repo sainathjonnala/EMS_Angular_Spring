@@ -6,12 +6,12 @@ import { EmployeeCancelLeaveComponent } from './employee-cancel-leave/employee-c
 import { EmployeeLeavesComponent } from './employee-leaves/employee-leaves.component';
 import { EmployeeLeaveBalanceComponent } from './employee-leave-balance/employee-leave-balance.component';
 import { EmployeeHomeComponent } from './employee-home/employee-home.component';
-import { ManagerLeavesComponent } from '../manager/manager-leaves/manager-leaves.component';
+import { EmployeeAuthGuard } from '../guards/employee-auth.guard';
 
 
 const employeeRoutes: Routes = [
   { 
-    path: 'employee' , component: EmployeeComponent, children: [
+    path: 'employee' , component: EmployeeComponent, canActivate: [EmployeeAuthGuard], children: [
       { path: 'home', component: EmployeeHomeComponent},
       { path: 'applyLeave' , component: EmployeeApplyLeaveComponent},
       { path: 'cancelLeave' , component: EmployeeCancelLeaveComponent},

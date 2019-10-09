@@ -7,11 +7,12 @@ import { ManagerCancelLeaveComponent } from './manager-cancel-leave/manager-canc
 import { ManagerLeaveBalanceComponent } from './manager-leave-balance/manager-leave-balance.component';
 import { ManagerLeavesComponent } from './manager-leaves/manager-leaves.component';
 import { ManagerLeaveRequestsComponent } from './manager-leave-requests/manager-leave-requests.component';
+import { ManagerAuthGuard } from '../guards/manager-auth.guard';
 
 
 const managerRoutes: Routes = [
   { 
-    path: 'manager' , component: ManagerComponent, children: [
+    path: 'manager' , component: ManagerComponent, canActivate: [ManagerAuthGuard], children: [
       { path: 'home', component: ManagerHomeComponent},
       { path: 'applyLeave' , component: ManagerApplyLeaveComponent},
       { path: 'cancelLeave' , component: ManagerCancelLeaveComponent},
