@@ -17,16 +17,14 @@
                             </div>
                         </div>
                 </div>
-                {{isRemoved}}
                 <button class="btn btn-primary"  type="submit" [disabled]="RemoveEmployeeForm.invalid">Remove</button>
             </form>
-            <div *ngIf="isRemoved =='true'" class="alert alert-success">
+            <div *ngIf="isRemoved == 'true' " class="alert alert-success">
                 Employee Removed Successfully.
             </div>
-            <div *ngIf="isRemoved =='false'" class="alert alert-warning">
+            <div *ngIf="isRemoved == 'false' " class="alert alert-danger">
                 Enter Valid Employee-ID.
             </div>
-
         </div>    
     </div>
 </div>    

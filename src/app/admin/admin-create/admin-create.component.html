@@ -1,7 +1,7 @@
 <div class="main">
     <div class="card" style="font-size: medium">
         <div class="card-header">
-            Add Employee
+            <h4>Add Employee</h4>
         </div>
         <div class="card-body">
             <form [formGroup] = "AddEmployeeForm" (ngSubmit)="onSubmit()">
@@ -113,10 +113,10 @@
                 <div class="form-group row">
                     <div class="col-sm-10">
                         <button  class="btn btn-primary" type="submit" [disabled]="AddEmployeeForm.invalid">Submit</button>
-                        <div *ngIf="isAdded == true" class="alert alert-successful">
+                        <div *ngIf="isAdded == 'true'" class="alert alert-success">
                             Employee Added.
                         </div>
-                        <div *ngIf="isAdded == false" class="alert alert-danger">
+                        <div *ngIf="isAdded == 'false'" class="alert alert-danger">
                             Employee Not Added.
                         </div>
                     </div>
