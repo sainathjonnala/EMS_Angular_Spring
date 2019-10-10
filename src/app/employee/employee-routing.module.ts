@@ -20,7 +20,7 @@ const employeeRoutes: Routes = [
       { path: 'leaveBalance' , component:EmployeeLeaveBalanceComponent },
     ]
   },
-  { path: '**', component: PageNotFoundComponent }
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

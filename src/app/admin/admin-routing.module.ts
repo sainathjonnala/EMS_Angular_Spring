@@ -26,7 +26,7 @@ const adminRoutes: Routes = [
       { path: 'salaries', component: AdminSalariesComponent }, 
     ]
   },
-  { path: '**', component: PageNotFoundComponent }
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
