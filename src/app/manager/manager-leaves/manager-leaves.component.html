@@ -9,6 +9,7 @@
                 <tr>
                     <th>Leave ID </th>
                     <th>Leave Type</th>
+                    <th>Reason</th>
                     <th>Status</th>
                     <th>From Date</th>
                     <th>To Date</th>
@@ -16,6 +17,7 @@
                 <tr *ngFor="let leave of leavesList">
                     <td>{{leave.leave_id}}</td>
                     <td>{{leave.leave_type}}</td>
+                    <td>{{leave.reason}}</td>
                     <td>{{leave.status}}</td>
                     <td>{{leave.from_date}}</td>
                     <td>{{leave.to_date}}</td>

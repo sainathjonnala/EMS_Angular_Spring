@@ -15,11 +15,11 @@ export class AdminService {
   baseURL: string = "http://localhost:8181/EMS";
 
   addUser(employee: Employee) : Observable<boolean>{
-    return this.httpClient.post<boolean>(this.baseURL + "/createEmployee" , employee).pipe(catchError(this.handler))
+    return this.httpClient.post<boolean>(this.baseURL + "/createEmployee" , employee).pipe(catchError(this.dataIntegrityhandler))
   }
 
   removeUser(employee_id: boolean) : Observable<boolean>{
-    return this.httpClient.delete<boolean>(this.baseURL + "/removeEmployee/" + employee_id).pipe(catchError(this.handler))
+    return this.httpClient.delete<boolean>(this.baseURL + "/removeEmployee/" + employee_id).pipe(catchError(this.dataIntegrityhandler))
   }
 
   getEmployees() : Observable<Employee[]>{
@@ -46,7 +46,7 @@ export class AdminService {
     return throwError(error.error.message || "Not exist")
   }
 
-  handler(error: HttpErrorResponse){
+  dataIntegrityhandler(error: HttpErrorResponse){
     return throwError(error.error.message || "Error")
   }
   

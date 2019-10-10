@@ -1,11 +1,14 @@
-<div class="header">  
-    <h5>
-        <p>
-        Logged in as:<br/>
-        UserName: {{employee.login.username | uppercase}}<br/>
-        Employee Id: {{employee.employee_id}}<br/>
-        Name: {{employee.last_name + " " + employee.first_name}}<br/>
-        Reporting To: {{employee.manager_id}}
-        </p>
-    </h5>
+<div class="home">  
+    <div class="card border-dark mb-3" style="max-width: 35rem;">
+        <div class="card-header"><h4>Details</h4></div>
+        <div class="card-body text-dark">
+            <h5 class="card-title">Welcome</h5>
+            <p class="card-text">
+                UserName : {{employee.login.username}}<br/>
+                Employee Id: {{employee.employee_id}}<br/>
+                Name: {{employee.last_name + " " + employee.first_name}}<br/>
+                Reporting To: {{employee.manager_id}}
+            </p>
+        </div>
+    </div>
 </div>  

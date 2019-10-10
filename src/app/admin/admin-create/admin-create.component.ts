@@ -90,6 +90,7 @@ export class AdminCreateComponent implements OnInit {
       },
       manager_id : this.AddEmployeeForm.value.manager_id
     }
+    
     this.adminService.addUser(this.employee).subscribe((data) =>{
       console.log(data)
       if(data.valueOf()){
@@ -98,6 +99,9 @@ export class AdminCreateComponent implements OnInit {
       else{
         this.isAdded = 'false';
       }
-    })
+    }, (error) =>{
+      this.isAdded = 'false';
+      }
+    )
   }
 }

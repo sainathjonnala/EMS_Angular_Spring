@@ -7,12 +7,12 @@ import { Employee } from 'src/app/models/employee';
   styleUrls: ['./manager-home.component.css']
 })
 export class ManagerHomeComponent implements OnInit {
-  employee: Employee;
+  manager: Employee;
 
   constructor() { }
 
   ngOnInit() {
-    this.employee = JSON.parse(sessionStorage.getItem('managerDetails'));
+    this.manager = JSON.parse(sessionStorage.getItem('managerDetails'));
   }
 
 }
