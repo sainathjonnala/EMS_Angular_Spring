@@ -107,6 +107,9 @@
                             <div *ngIf="address.errors.required">
                                     Address is required.
                             </div>
+                            <div *ngIf="address.errors.maxlength">
+                                    Address length cannot exceed 20.
+                            </div>
                         </div>
                     </div>	
                 </div>

@@ -12,11 +12,11 @@ import { EmployeeAuthGuard } from '../guards/employee-auth.guard';
 const employeeRoutes: Routes = [
   { 
     path: 'employee' , component: EmployeeComponent, canActivate: [EmployeeAuthGuard], children: [
-      { path: 'home', component: EmployeeHomeComponent},
-      { path: 'applyLeave' , component: EmployeeApplyLeaveComponent},
-      { path: 'cancelLeave' , component: EmployeeCancelLeaveComponent},
-      { path: 'leaves' , component: EmployeeLeavesComponent},
-      { path: 'leaveBalance' , component:EmployeeLeaveBalanceComponent}
+      { path: 'home', component: EmployeeHomeComponent },
+      { path: 'applyLeave' , component: EmployeeApplyLeaveComponent },
+      { path: 'cancelLeave' , component: EmployeeCancelLeaveComponent },
+      { path: 'leaves' , component: EmployeeLeavesComponent },
+      { path: 'leaveBalance' , component:EmployeeLeaveBalanceComponent }
     ]
   }
 ];

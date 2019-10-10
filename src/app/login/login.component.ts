@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    sessionStorage.clear();
   }
 
   invalid:boolean = false;
@@ -37,20 +38,15 @@ export class LoginComponent implements OnInit {
 
     this.loginService.userValidation(loginCredentials).subscribe(
       (data) => {
-  
         if (data.role.role_name == "admin") {
           sessionStorage.setItem('adminDetails',JSON.stringify(data))
           this.router.navigate(['admin'])
-
         }
         else if (data.role.role_name === "employee") {
           this.loginService.getUser(loginCredentials).subscribe(
-            (data) => {
-              console.log(data);
-              
+            (data) => {              
               sessionStorage.setItem('employeeDetails',JSON.stringify(data))
-              this.router.navigate(['employee'])
-              
+              this.router.navigate(['employee']) 
             }
           )
         }
@@ -64,7 +60,6 @@ export class LoginComponent implements OnInit {
         }
       },
       (error) => {
-        console.log(error)
         this.invalid = true;
       }
     )

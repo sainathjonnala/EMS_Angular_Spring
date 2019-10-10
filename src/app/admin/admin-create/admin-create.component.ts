@@ -23,12 +23,13 @@ export class AdminCreateComponent implements OnInit {
     last_name : ['', Validators.required ],
     first_name : ['', Validators.required ],
     email: ['', [Validators.required, Validators.email]],
-    address : ['', Validators.required ],
+    address : ['', [Validators.required, Validators.maxLength(20)] ],
     employee_id : ['', Validators.required ],
     salary : ['', Validators.required ],
     department_id : ['', Validators.required ],
     role_id : ['', Validators.required ],
     manager_id : ['', Validators.required ]
+    
   })
 
   get last_name() {
