@@ -10,21 +10,23 @@ import { AdminManagerEmployeesComponent } from './admin-manager-employees/admin-
 import { AdminSalariesComponent } from './admin-salaries/admin-salaries.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminAuthGuard } from '../guards/admin-auth.guard';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 
 const adminRoutes: Routes = [
-{
-  path: 'admin', component: AdminComponent,canActivate: [AdminAuthGuard], children: [
-    { path: 'home', component: AdminHomeComponent},
-    { path: 'add', component: AdminCreateComponent },
-    { path: 'remove', component: AdminRemoveComponent },
-    { path: 'employees', component: AdminEmployeesListComponent },
-    { path: 'departments', component: AdminDepartmentsListComponent },
-    { path: 'employee', component: AdminEmployeeDetailsComponent },
-    { path: 'managerEmployees', component: AdminManagerEmployeesComponent },
-    { path: 'salaries', component: AdminSalariesComponent },
-  ]
-}
+  {
+    path: 'admin', component: AdminComponent, canActivate: [AdminAuthGuard], children: [
+      { path: 'home', component: AdminHomeComponent},
+      { path: 'add', component: AdminCreateComponent },
+      { path: 'remove', component: AdminRemoveComponent },
+      { path: 'employees', component: AdminEmployeesListComponent },
+      { path: 'departments', component: AdminDepartmentsListComponent },
+      { path: 'employee', component: AdminEmployeeDetailsComponent },
+      { path: 'managerEmployees', component: AdminManagerEmployeesComponent },
+      { path: 'salaries', component: AdminSalariesComponent }, 
+    ]
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

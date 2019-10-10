@@ -8,6 +8,7 @@ import { ManagerLeaveBalanceComponent } from './manager-leave-balance/manager-le
 import { ManagerLeavesComponent } from './manager-leaves/manager-leaves.component';
 import { ManagerLeaveRequestsComponent } from './manager-leave-requests/manager-leave-requests.component';
 import { ManagerAuthGuard } from '../guards/manager-auth.guard';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 
 const managerRoutes: Routes = [
@@ -20,7 +21,8 @@ const managerRoutes: Routes = [
       { path: 'leaveBalance' , component: ManagerLeaveBalanceComponent},
       { path: 'requests' , component: ManagerLeaveRequestsComponent},
     ]
-  }
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

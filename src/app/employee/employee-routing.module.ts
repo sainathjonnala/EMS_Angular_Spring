@@ -7,6 +7,7 @@ import { EmployeeLeavesComponent } from './employee-leaves/employee-leaves.compo
 import { EmployeeLeaveBalanceComponent } from './employee-leave-balance/employee-leave-balance.component';
 import { EmployeeHomeComponent } from './employee-home/employee-home.component';
 import { EmployeeAuthGuard } from '../guards/employee-auth.guard';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 
 const employeeRoutes: Routes = [
@@ -16,9 +17,10 @@ const employeeRoutes: Routes = [
       { path: 'applyLeave' , component: EmployeeApplyLeaveComponent },
       { path: 'cancelLeave' , component: EmployeeCancelLeaveComponent },
       { path: 'leaves' , component: EmployeeLeavesComponent },
-      { path: 'leaveBalance' , component:EmployeeLeaveBalanceComponent }
+      { path: 'leaveBalance' , component:EmployeeLeaveBalanceComponent },
     ]
-  }
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

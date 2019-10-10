@@ -30,7 +30,6 @@ export class AdminRemoveComponent implements OnInit {
   onSubmit(){
     this.adminService.removeUser(this.RemoveEmployeeForm.value.employee_id).subscribe(
       (data) => {
-        console.log(data);
         if(data.valueOf()){
           this.isRemoved = 'true';
         }
