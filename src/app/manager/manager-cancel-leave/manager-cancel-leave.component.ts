@@ -21,10 +21,8 @@ export class ManagerCancelLeaveComponent implements OnInit {
     this.manager = JSON.parse(sessionStorage.getItem('managerDetails'));
     this.managerleaveService.getAppliedLeaves(this.manager.employee_id).subscribe( 
       ( data ) => {
-        console.log(data);
         
         if( data.length > 0 ){
-          console.log(data); 
           this.leavesList = data;          
           this.isEmpty = false;
         }
@@ -36,8 +34,6 @@ export class ManagerCancelLeaveComponent implements OnInit {
   }
 
   cancelLeave(leave: Leave){
-    console.log(leave);
-    
     this.managerleaveService.cancelLeave(leave).subscribe(
       (data) => {
         if( data.valueOf()){

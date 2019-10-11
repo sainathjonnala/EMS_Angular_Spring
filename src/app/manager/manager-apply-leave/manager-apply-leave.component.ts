@@ -50,10 +50,9 @@ export class ManagerApplyLeaveComponent implements OnInit {
       employee: this.manager,
       reason: this.ApplyLeaveForm.value.reason
     }
-    console.log(this.leave);
+    
     this.leaveService.applyLeave(this.leave).subscribe(
       (data) => {
-        console.log(data)
         if( data.valueOf() ){
           this.isApplied = true;
         }

@@ -13,7 +13,7 @@ export class EmployeeApplyLeaveComponent implements OnInit {
 
   leave: Leave;
   employee: Employee;
-  isApplied: boolean;
+  isApplied: String;
 
   constructor(private formBuilder: FormBuilder, private leaveService: EmployeeLeaveService) { }
 
@@ -51,15 +51,15 @@ export class EmployeeApplyLeaveComponent implements OnInit {
       employee: this.employee,
       reason: this.ApplyLeaveForm.value.reason
     }
-    console.log(this.leave);
+ 
     this.leaveService.applyLeave(this.leave).subscribe(
       (data) => {
-        console.log(data)
+
         if(data.valueOf()){
-          this.isApplied = true;
+          this.isApplied = 'true';
         }
         else{
-          this.isApplied = false;
+          this.isApplied = 'false';
         }
       }
     ) 

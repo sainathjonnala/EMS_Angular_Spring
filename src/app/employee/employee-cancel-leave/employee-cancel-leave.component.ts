@@ -22,7 +22,6 @@ export class EmployeeCancelLeaveComponent implements OnInit {
     this.employee = JSON.parse(sessionStorage.getItem('employeeDetails'));
     this.leaveService.getAppliedLeaves(this.employee.employee_id).subscribe( 
       ( data ) => {
-        console.log(data);
         
         if( data.length > 0 ){
           this.leavesList = data;   

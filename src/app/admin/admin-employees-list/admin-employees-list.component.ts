@@ -19,9 +19,6 @@ export class AdminEmployeesListComponent implements OnInit {
     this.adminService.getEmployees().subscribe(
       (data) => {
       
-        console.log(data);
-   
-      
         if(data != null){
         this.employeesList = data;
         this.isEmpty = false;

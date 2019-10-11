@@ -12,6 +12,7 @@ export class EmployeeLeaveBalanceComponent implements OnInit {
 
   employee: Employee;
   leave_balance: LeaveBalance;   
+  
   constructor(private leaveService: EmployeeLeaveService) { }
 
   ngOnInit() {

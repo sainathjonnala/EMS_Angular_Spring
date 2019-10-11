@@ -32,7 +32,7 @@ export class AdminManagerEmployeesComponent implements OnInit {
     this.adminService.getManagerEmployees(this.ManagerForm.value.manager_id).subscribe(
       (data) => {
         if(data != null){
-          console.log(data)
+          
           this.employeesList = data;
           this.displayTable = true;
           this.isEmpty = false;

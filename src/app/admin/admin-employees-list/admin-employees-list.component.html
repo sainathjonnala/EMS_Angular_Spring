@@ -9,11 +9,13 @@
                 <tr>
                     <th>Employee ID </th>
                     <th>Employee Name</th>
+                    <th>Reporting To</th>
                     <th>Department ID</th>
                 </tr>
                 <tr *ngFor="let employee of employeesList">
                     <td>{{employee.employee_id}}</td>
                     <td>{{employee.last_name +" "+employee.first_name}}</td>
+                    <td>{{employee.manager_id}}</td>
                     <td>{{employee.department.department_id}}</td>
                 </tr>
                 </table>

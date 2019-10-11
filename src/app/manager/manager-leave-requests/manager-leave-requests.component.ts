@@ -24,7 +24,6 @@ export class ManagerLeaveRequestsComponent implements OnInit {
       ( data ) => {
 
         if( data.length > 0 ){
-          console.log(data);  
           this.requestsList = data; 
           this.isEmpty = false;
         }
@@ -37,7 +36,6 @@ export class ManagerLeaveRequestsComponent implements OnInit {
   }
 
   acceptLeave(leave: Leave){
-    console.log(leave);
     this.managerLeaveService.acceptLeave(leave).subscribe(
       (data) => {
         if( data.valueOf() ){
@@ -49,7 +47,6 @@ export class ManagerLeaveRequestsComponent implements OnInit {
   }
 
   rejectLeave(leave: Leave){
-    console.log(leave);
     this.managerLeaveService.rejectLeave(leave).subscribe(
       (data) => {
         if( data.valueOf() ){

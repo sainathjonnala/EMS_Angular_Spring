@@ -19,13 +19,10 @@ export class ManagerLeavesComponent implements OnInit {
   ngOnInit() {
     this.manager = JSON.parse(sessionStorage.getItem('managerDetails'));
     this.managerLeaveService.getLeaveTransactions(this.manager.employee_id).subscribe( 
-      ( data ) => {
+      (data) => {
 
         if( data.length > 0 ){
-          console.log(data);
-          
           this.leavesList = data;
-          
           this.isEmpty = false;
         }
         else{

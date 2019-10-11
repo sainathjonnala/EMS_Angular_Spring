@@ -36,7 +36,6 @@ export class AdminSalariesComponent implements OnInit {
     
     this.adminService.getSalaries(this.SalariesForm.value.salaryFrom, this.SalariesForm.value.salaryTo).subscribe(
       (data) => {
-        console.log(data);   
         if(data.length > 0){
         this.employeesList = data;
         this.displayForm = true;

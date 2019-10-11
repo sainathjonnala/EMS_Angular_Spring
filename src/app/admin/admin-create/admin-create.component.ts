@@ -93,7 +93,7 @@ export class AdminCreateComponent implements OnInit {
     }
     
     this.adminService.addUser(this.employee).subscribe((data) =>{
-      console.log(data)
+      
       if(data.valueOf()){
         this.isAdded = 'true';
       }
