@@ -10,16 +10,15 @@ import { ManagerLeaveRequestsComponent } from './manager-leave-requests/manager-
 import { ManagerAuthGuard } from '../guards/manager-auth.guard';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
-
 const managerRoutes: Routes = [
   { 
-    path: 'manager' , component: ManagerComponent, canActivate: [ManagerAuthGuard], children: [
+    path: 'manager', component: ManagerComponent, canActivate: [ManagerAuthGuard], children: [
       { path: 'home', component: ManagerHomeComponent},
-      { path: 'applyLeave' , component: ManagerApplyLeaveComponent},
-      { path: 'cancelLeave' , component: ManagerCancelLeaveComponent},
-      { path: 'leaves' , component: ManagerLeavesComponent},
-      { path: 'leaveBalance' , component: ManagerLeaveBalanceComponent},
-      { path: 'requests' , component: ManagerLeaveRequestsComponent},
+      { path: 'applyLeave', component: ManagerApplyLeaveComponent},
+      { path: 'cancelLeave', component: ManagerCancelLeaveComponent},
+      { path: 'leaves', component: ManagerLeavesComponent},
+      { path: 'leaveBalance', component: ManagerLeaveBalanceComponent},
+      { path: 'requests', component: ManagerLeaveRequestsComponent},
     ]
   },
   { path: '**', component: PageNotFoundComponent }

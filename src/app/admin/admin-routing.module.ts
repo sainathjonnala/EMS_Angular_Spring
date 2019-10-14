@@ -10,8 +10,6 @@ import { AdminManagerEmployeesComponent } from './admin-manager-employees/admin-
 import { AdminSalariesComponent } from './admin-salaries/admin-salaries.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminAuthGuard } from '../guards/admin-auth.guard';
-import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
-
 
 const adminRoutes: Routes = [
   {
@@ -25,8 +23,7 @@ const adminRoutes: Routes = [
       { path: 'managerEmployees', component: AdminManagerEmployeesComponent },
       { path: 'salaries', component: AdminSalariesComponent }, 
     ]
-  },
-  // { path: '**', component: PageNotFoundComponent }
+  }
 ];
 
 @NgModule({
