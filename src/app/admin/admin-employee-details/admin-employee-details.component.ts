@@ -34,6 +34,7 @@ export class AdminEmployeeDetailsComponent implements OnInit {
         if( data != null ){
         this.displayForm = true;
         this.employee = data;
+        this.notExist = false;
         }
       },
       (error) => {
