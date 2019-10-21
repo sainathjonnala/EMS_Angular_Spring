@@ -8,7 +8,7 @@ import { ManagerAuthService } from '../services/manager-auth.service';
 })
 export class ManagerAuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
-  constructor(private router: Router, private managerAuth: ManagerAuthService){}
+  constructor(private managerAuth: ManagerAuthService){}
 
   canActivate(
     next: ActivatedRouteSnapshot,

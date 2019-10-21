@@ -19,15 +19,15 @@ export class EmployeeLeaveService {
   }
 
   getLeaveTransactions(employee_id: string): Observable<Leave[]>{
-    return this.httpClient.get<Leave[]>(this.baseURL + "/viewLeaves/" + employee_id)
+    return this.httpClient.get<Leave[]>(this.baseURL + "/leaves/" + employee_id)
   }
 
   getAppliedLeaves(employee_id: string): Observable<Leave[]>{
-    return this.httpClient.get<Leave[]>(this.baseURL + "/viewAppliedLeaves/" + employee_id)
+    return this.httpClient.get<Leave[]>(this.baseURL + "/appliedLeaves/" + employee_id)
   }
   
   getLeaveBalance(employee_id: string): Observable<LeaveBalance>{
-    return this.httpClient.get<LeaveBalance>(this.baseURL + "/viewLeaveBalance/" + employee_id)
+    return this.httpClient.get<LeaveBalance>(this.baseURL + "/leaveBalance/" + employee_id)
   }
 
   cancelLeave(leave: Leave): Observable<boolean>{

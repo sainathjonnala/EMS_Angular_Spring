@@ -8,7 +8,7 @@ import { AdminAuthService } from '../services/admin-auth.service';
 })
 export class AdminAuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
-  constructor(private router:Router, private adminAuth: AdminAuthService){}
+  constructor(private adminAuth: AdminAuthService){}
 
   canActivate(
     next: ActivatedRouteSnapshot,

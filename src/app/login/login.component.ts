@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
     this.loginService.userValidation(loginCredentials).subscribe(
       (data) => {
-        if (data.role.role_name == "admin") {
+        if (data.role.role_name === "admin") {
           sessionStorage.setItem('adminDetails',JSON.stringify(data))
           this.router.navigate(['admin'])
         }
@@ -64,6 +64,4 @@ export class LoginComponent implements OnInit {
       }
     )
   }
-
-
 }

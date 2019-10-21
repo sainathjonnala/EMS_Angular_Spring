@@ -8,7 +8,7 @@ import { EmployeeAuthService } from '../services/employee-auth.service';
 })
 export class EmployeeAuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
-  constructor(private router:Router, private employeeAuth: EmployeeAuthService){}
+  constructor(private employeeAuth: EmployeeAuthService){}
 
   canActivate(
     next: ActivatedRouteSnapshot,
